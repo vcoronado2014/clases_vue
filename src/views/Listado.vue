@@ -2,7 +2,7 @@
   <div id="listado">
     <Menu />
     <ContainerListado />
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 </template>
 
@@ -10,13 +10,13 @@
 /* import Header from "@/components/Header.vue"; */
 import Menu from "@/components/Menu.vue";
 import ContainerListado from "@/components/ContainerListado.vue";
-import Footer from "@/components/Footer.vue";
+/* import Footer from "@/components/Footer.vue"; */
 export default {
   components: {
     /* Header, */
     Menu,
     ContainerListado,
-    Footer
+    /* Footer */
   }
 };
 </script>

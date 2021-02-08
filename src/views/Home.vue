@@ -1,9 +1,9 @@
 <template>
   <div class="home">
-    <Menu />
+    <Menu titulo="Inicio de mi app" />
     <ContainerHome />
     <RedesSociales />
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 </template>
 
@@ -12,7 +12,7 @@
 //1. importamos nuestro componente
 /* import Header from "@/components/Header.vue"; */
 import ContainerHome from "@/components/ContainerHome.vue";
-import Footer from "@/components/Footer.vue";
+/* import Footer from "@/components/Footer.vue"; */
 import Menu from "@/components/Menu.vue";
 import RedesSociales from "@/components/RedesSociales.vue";
 
@@ -23,7 +23,7 @@ export default {
     Menu,
     ContainerHome,
     RedesSociales,
-    Footer,
+    /* Footer, */
     /* Menu */
   }
 };

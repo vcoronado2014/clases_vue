@@ -4,7 +4,7 @@
                 
             <a class="navbar-brand" href="#">
                 <img src="../assets/logo.png" alt="" width="30" height="24" class="d-inline-block align-top">
-            Bienvenidos a mi APP
+                {{getTitle()}}
             </a>
             
             <button type="button"  class="btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -26,6 +26,14 @@
 <script>
 export default {
     name: 'MenuBar',
+    props:{
+        titulo: String
+    },
+    methods:{
+        getTitle(){
+            return this.$props.titulo  ? this.$props.titulo : "MI aplicación"
+        }
+    }
 } 
 </script>
 

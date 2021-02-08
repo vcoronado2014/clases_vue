@@ -1,8 +1,8 @@
 <template>
-  <!-- aca agregamos el row -->
-  <div id="containerListado" class="row" >
-    <!-- envolvemos todo en un div para generar nuestro civlo v-for y aplicamos clases responsivas -->
-    <div v-for="partido in listadoPartidos" :key="partido.Id" class="col-12 col-sm-6">
+  <div id="containerListado">
+    <!-- envolvemos todo en un div para generar nuestro civlo v-for y aplicamos clases responsivas
+    para mostrar solo cuando sea vista small -->
+    <div v-for="partido in listadoPartidos" :key="partido.Id" class="d-block d-sm-none">
       <!-- ahora podriamos usar cards para asegurar una mejor vista responsiva -->
       <!-- agregamos card agregamos mt-1 -->
       <div class="card mt-1">
@@ -23,6 +23,30 @@
           >Detalles</router-link>
         </div>
       </div>
+    </div>
+    <!-- ahora mostramos cuando sea mayor a small -->
+    <!-- creamos clase row -->
+    <!-- dividimos en columnas iguales -->
+    <div class="d-none d-md-block container-fluid">
+      <div class="row">
+      <div class="col-6">
+       <ul class="list-group mt-2">
+        <!-- aca generamos nuestra lista -->
+        <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action" 
+        v-for="partido in listadoPartidos" :key="partido.Id" @click.capture.stop="mostrarDetalle(partido)">
+          {{partido.Nombre}}
+          <small>{{partido.Horario}}</small>
+        </li>
+      </ul>
+      </div>
+      <div class="col-6" v-if="detalleSeleccionado">
+        {{detalleSeleccionado.Nombre}}
+      </div>
+      <div class="col-6" v-else>
+        ohhhhhhhh no hay elemento seleccionado
+      </div>
+      </div>
+
     </div>
 
 <!--     <div
@@ -61,6 +85,7 @@
 </template>
 
 <script>
+
 export default {
   data() {
     return {
@@ -101,7 +126,8 @@ export default {
           Lugar: "Los conquistadores 1324, Santiago",
           Mapa: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.4594082841877!2d-70.57293098430219!3d-33.437335580777756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662ce545e03a7dd%3A0x69745b680e41dfc8!2sEstadio%20Banco%20Central!5e0!3m2!1ses!2scl!4v1612568827094!5m2!1ses!2scl"
         }
-      ]
+      ],
+      detalleSeleccionado: null
     };
   },
   created() {
@@ -118,6 +144,11 @@ export default {
           descripcion: partido.descripcion
         }
       })
+    },
+    mostrarDetalle(partido){
+      console.log(partido);
+      this.detalleSeleccionado = partido;
+      console.log(this.detalleSeleccionado);
     }
   }
 };
