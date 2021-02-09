@@ -35,4 +35,28 @@ esta es la url https://next.router.vuejs.org/guide/advanced/transitions.html#tra
 
 se modifica app.vue
 
+para volver a deployar la aplicación en firebase seguir estos pasos
+aplicación nueva
+1. crear proyecto en firebase
+2. instalar herramientas de firebase
+  2.1. npm install -g firebase-tools
+  2.2. firebase login (cuidado con las ventanas adicionales, se deben autentificar)
+  2.3. firebase init (para inicializar firebase), seleccionamos Hosting
+  2.4. seleccionamos el proyecto existente
+  2.5. escribir el directorio dist cuando pregunte por el directorio
+  2.6. configurar index como single-page
+  2.7. deploys en github decirle que NO
+  2.8. npm run build
+  2.9. ejecutar firebase deploy
+
+
+aplicación existente
+    1. ejecutar npm run build
+    2. ejecutar firbase deploy
+
+
+
+
+
+
 
