@@ -15,7 +15,7 @@
                 
                 <li><router-link class="dropdown-item" to="/">Home</router-link></li>
                 <li><router-link class="dropdown-item" to="/Listado">Listado</router-link></li>  
-
+                <li><router-link class="dropdown-item" to="/Login">Login</router-link></li>
             </ul> 
                
         </nav>

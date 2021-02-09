@@ -1,9 +1,9 @@
 <template>
   <div id="header">
     <!--agregamos fixed-top -->
-    <nav class="navbar navbar-dark bg-primary fixed-top">
+    <nav class="navbar navbar-dark bg-primary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Bienvenidos a mi APP</a>
+        <a class="navbar-brand" href="#">Login</a>
       </div>
     </nav>
   </div>

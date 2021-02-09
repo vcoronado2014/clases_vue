@@ -55,7 +55,87 @@ aplicación existente
     2. ejecutar firbase deploy
 
 
+TAREA 4....
+EMPEZAMOS CON LA INSTALACIÓN DE LOS SIGUIENTES ELEMENTOS...
+1. instalación de vue fire
+    1.1. npm install vuefire firebase
 
+2. debemos ir a la consola de firebase e ir a la pestaña de autentificación que esta a la
+derecha de la pestaña..
+    2.1. seleccionamos el proveedor de inicio de sesion correo/contraseña
+    2.2. habilitamos ambas cosas y guardamos.
+    2.3. configuramos 2 cuentas en users denton@example.com clave nysl123 Y
+         parent@example.com contraseña soccer89
+    2.4. presionamos en información general en configuracion, 
+        configuracion del proyecto, luego añadimos aplicación.
+    2.5. vinculamos el firebase hosting a nuestro sitio.
+    2.6. creamos en nuestra app en src una carpeta llamada firebase, dentro de
+        ella un archivo llamado main.js
+    2.7. dentro del archivo main.js copiamos el siguiente codigo
+
+import firebase from 'firebase'
+//import firestore from 'firebase/firestore';
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyBALMhTVyAefjh4JU36r2X2qQbCrfaBjkA",
+    authDomain: "appsoccer-7d899.firebaseapp.com",
+    projectId: "appsoccer-7d899",
+    storageBucket: "appsoccer-7d899.appspot.com",
+    messagingSenderId: "904612287412",
+    appId: "1:904612287412:web:56cb6cd136cb104fb7d8e1"
+  };
+
+  const firebaseApp = firebase.initializeApp(firebaseConfig);
+  firebaseApp.firestore().settings({ timestampsInSnapshots: true });
+
+  export default firebaseApp.firestore();
+
+3. creamos vista login y componente login
+    3.1. en el componente de login agregaremos un formulario BOOTSTRAP
+    3.2. en el formulario BOOTSTRAP agregamos un methods y un @submit.prevent para que
+        cuando hagamos click en el boton se gatille el login
+    3.3. creamos en data las propiedades email y password
+    3.4. en el formulario html utilizamos v-model para hacer binding con las propiedades
+
+4. importamos los siguientes elementos en nuestro containerlogin
+import firebase from 'firebase';
+import '@/firebase/init';
+
+luego dentro del metodo login lo usamos
+firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+                .then(user =>{
+                    //aca nos devuelve el usuario
+                    console.log(user);
+                }).catch(error => {
+                    console.log(error.message);
+                })
+
+
+5. creamos las dos vistas, una para leer y otra para publicar mensajes, les llamaremos
+    LeerMensajes.vue y PublicarMensajes.vue
+
+//HASTA LO ANTERIOR LLEGAMOS CON AUTH DE FIREBASE, AHORA CONTINUAMOS CON VUEX
+
+6. instalar vuex 
+    6.1. ejecutar el comando npm install vuex@next --save
+7. crear una carpeta dentro de src llamada store y dentro de ella un archivo index.js
+    con el siguiente contenido..
+
+import { createStore } from 'vuex';
+
+export const store = createStore({
+    state(){
+        return {
+            //todavia no tenemos nada en el store
+        }
+    }
+})
+
+8. modificamos el main.js agregando 
+import {store} from './store';
+y más abajo
+.use(router, store)
 
 
 
