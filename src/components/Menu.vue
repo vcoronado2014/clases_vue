@@ -31,7 +31,7 @@ export default {
     },
     methods:{
         getTitle(){
-            return this.$props.titulo  ? this.$props.titulo : "MI aplicación"
+            return this.$props.titulo  ? this.$props.titulo : "Bienvenidos"
         }
     }
 } 

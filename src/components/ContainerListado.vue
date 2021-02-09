@@ -2,6 +2,7 @@
   <div id="containerListado">
     <!-- envolvemos todo en un div para generar nuestro civlo v-for y aplicamos clases responsivas
     para mostrar solo cuando sea vista small -->
+    <!-- ESTE DIV SE VA A MOSTRAR CUANDO SEA X-SMALL O SEA VERTICAL -->
     <div v-for="partido in listadoPartidos" :key="partido.Id" class="d-block d-sm-none">
       <!-- ahora podriamos usar cards para asegurar una mejor vista responsiva -->
       <!-- agregamos card agregamos mt-1 -->
@@ -33,17 +34,26 @@
        <ul class="list-group mt-2">
         <!-- aca generamos nuestra lista -->
         <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action" 
-        v-for="partido in listadoPartidos" :key="partido.Id" @click.capture.stop="mostrarDetalle(partido)">
+        v-for="partido in listadoPartidos" :key="partido.Id" @click="mostrarDetalle(partido)">
           {{partido.Nombre}}
           <small>{{partido.Horario}}</small>
         </li>
       </ul>
       </div>
-      <div class="col-6" v-if="detalleSeleccionado">
-        {{detalleSeleccionado.Nombre}}
+      <div class="col-6 mt-2" v-if="detalleSeleccionado">
+        <div class="card">
+        <iframe :src="detalleSeleccionado.Mapa" width="400" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <div class="card-body">
+          <h5 class="card-title">{{detalleSeleccionado.Nombre}}</h5>
+          <p class="card-text">{{detalleSeleccionado.Descripcion}}</p>
+        </div>
       </div>
-      <div class="col-6" v-else>
-        ohhhhhhhh no hay elemento seleccionado
+        
+      </div>
+      <div class="col-6 mt-4" v-else>
+        <div class="alert alert-danger" role="alert">
+          Debe seleccionar un  partido para ver los detalles respectivos.
+        </div>
       </div>
       </div>
 

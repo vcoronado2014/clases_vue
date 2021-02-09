@@ -1,6 +1,6 @@
 <template>
   <div id="listado">
-    <Menu />
+    <Menu titulo="Listado de partidos" />
     <ContainerListado />
     <!-- <Footer /> -->
   </div>

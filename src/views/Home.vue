@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Menu titulo="Inicio de mi app" />
+    <Menu titulo="Bienvenidos a mi app" />
     <ContainerHome />
     <RedesSociales />
     <!-- <Footer /> -->
