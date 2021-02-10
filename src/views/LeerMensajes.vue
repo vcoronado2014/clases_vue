@@ -6,15 +6,16 @@
 </template>
 
 <script>
-import {store} from '../../src/store/index';
+//import {store} from '../../src/store/index';
 export default {
     methods: {
         getSuperTitle(){
-            return store.state.superTitulo;
+            //return store.state.superTitulo;
+            return this.$store.state.superTitulo
         }
     },
     created(){
-        console.log(store.state);
+        //console.log(store.getters.superTituloDos);
         console.log('creado leer mensajes');
     }
 

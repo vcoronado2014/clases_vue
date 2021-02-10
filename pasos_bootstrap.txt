@@ -52,7 +52,7 @@ aplicación nueva
 
 aplicación existente
     1. ejecutar npm run build
-    2. ejecutar firbase deploy
+    2. ejecutar firebase deploy
 
 
 TAREA 4....
@@ -131,6 +131,8 @@ export const store = createStore({
         }
     }
 })
+
+export default store
 
 8. modificamos el main.js agregando 
 import {store} from './store';
