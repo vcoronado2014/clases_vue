@@ -46,13 +46,14 @@ export default {
     },
     methods: {
         login(){
-            console.log('accder');
+            console.log('acceder');
             if (this.email && this.password){
                 //aca enviamos formulario
                 firebase.auth().signInWithEmailAndPassword(this.email, this.password)
                 .then(user =>{
                     //aca nos devuelve el usuario
                     console.log(user);
+                    this.$store.dispatch('setUserAction');
                     this.$router.push({ name: 'LeerMensajes'});
                 }).catch(error => {
                     console.log(error.message);

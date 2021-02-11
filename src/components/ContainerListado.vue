@@ -24,6 +24,7 @@
           >Detalles</router-link>
         </div>
       </div>
+      
     </div>
     <!-- ahora mostramos cuando sea mayor a small -->
     <!-- creamos clase row -->

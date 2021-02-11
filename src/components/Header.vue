@@ -10,8 +10,17 @@
 </template>
 
 <script>
+import firebase from 'firebase';
+import '@/firebase/init';
 export default {
-  name: "Header"
+  name: "Header",
+  methods:{
+    logout(){
+      firebase.auth().signOut().then(()=>{
+        this.$route.push({ name: 'Home'});
+      })
+    }
+  }
 };
 </script>
 

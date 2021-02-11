@@ -22,19 +22,11 @@
         en el menú podrás dirigirte al
         Listado de partidos
         </p>
-<!--         <router-link
-          id="link-partido"
-          class="btn btn-primary boton-listado"
-          to="/Listado"
-          >Listado de partidos</router-link
-        > -->
-<!--         <button @click="abrirListado" class="btn btn-primary boton-listado">
-          Listado de Partidos
-        </button> -->
       </div>
     </div>
   </div>
 </template>
+
 
 <script>
 export default {
