@@ -54,7 +54,8 @@ export default {
                     //aca nos devuelve el usuario
                     console.log(user);
                     this.$store.dispatch('setUserAction');
-                    this.$router.push({ name: 'LeerMensajes'});
+                    //this.$router.push({ name: 'LeerMensajes'});
+                    this.$router.push({ name: 'CrearMensajes'});
                 }).catch(error => {
                     console.log(error.message);
                 })

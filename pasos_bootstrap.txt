@@ -112,6 +112,14 @@ firebase.auth().signInWithEmailAndPassword(this.email, this.password)
                 })
 
 
+Adicional.....
+a) ir a la consola de firebase, seleccionar el proyecto y pinchar en Realtime database
+b) pinchar crear base de datos, dejamos por defecto estados unidos y pinchamos en siguiente.
+c) seleccionamos en modo de prueba y presionamos el boton habilitar.
+
+
+
+
 5. creamos las dos vistas, una para leer y otra para publicar mensajes, les llamaremos
     LeerMensajes.vue y PublicarMensajes.vue
 

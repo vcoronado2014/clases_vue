@@ -4,6 +4,8 @@ import Listado from "../views/Listado.vue";
 import Detalle from "../views/Detalle.vue";
 import Login from "../views/Login.vue";
 import LeerMensajes from "../views/LeerMensajes.vue";
+import DetalleListado from "../views/DetalleListado.vue";
+import CrearMensajes from "../views/CrearMensajes.vue";
 
 const routes = [
   {
@@ -15,6 +17,16 @@ const routes = [
     path: "/Listado",
     name: "Listado",
     component: Listado
+  },
+  {
+    path: "/DetalleListado",
+    name: "DetalleListado",
+    component: DetalleListado
+  },
+  {
+    path: "/CrearMensajes",
+    name: "CrearMensajes",
+    component: CrearMensajes
   },
   {
     path: "/LeerMensajes",
