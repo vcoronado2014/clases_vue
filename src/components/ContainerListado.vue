@@ -1,5 +1,6 @@
 <template>
   <div id="containerListado">
+    <h3>{{$store.getters.getDirectionUser}}</h3>
     <!-- envolvemos todo en un div para generar nuestro civlo v-for y aplicamos clases responsivas
     para mostrar solo cuando sea vista small -->
     <!-- ESTE DIV SE VA A MOSTRAR CUANDO SEA X-SMALL O SEA VERTICAL -->
@@ -58,39 +59,6 @@
       </div>
 
     </div>
-
-<!--     <div
-      class="list-group"
-      v-for="partido in listadoPartidos"
-      :key="partido.Id"
-    >
-      <a class="list-group-item list-group-item-action" aria-current="true">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">{{ partido.Nombre }}</h5>
-          <small>{{ partido.Horario }}</small>
-        </div>
-        <p class="mb-1">{{ partido.Descripcion }}</p>
-        <small>{{ partido.Participantes }}</small>
-        <br>
-        <router-link id="partido.id" class="btn btn-secondary boton-listado mt-1" 
-        :to="{ name: 'Detalle', params: { 
-          nombre: partido.Nombre, 
-          descripcion: partido.Descripcion, 
-          participantes: partido.Participantes, 
-          lugar: partido.Lugar,
-          mapa: partido.Mapa
-          }}"
-        >Detalles</router-link>
-      </a>
-    </div> -->
-
-
-<!--             <router-link
-          id="link-partido"
-          class="btn btn-primary boton-listado mt-1"
-          to="/"
-          >Volver</router-link
-        > -->
   </div>
 </template>
 

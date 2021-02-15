@@ -1,6 +1,8 @@
 <template>
   <!-- agregamos container  -->
   <div id="containerHome" class="container">
+    <h1>{{$store.getters.obtenerElemento1}}</h1>
+    <button @click.prevent="cambiarTitulo">Cambiar supertitulo</button>
     <!-- agregamos row y personalizamos card por una clase card-home agregamos mt-1 -->
     <div class="card-home row mt-1">
       <!-- agregamos col y un mt-2 a la imagen-->
@@ -22,15 +24,6 @@
         en el menú podrás dirigirte al
         Listado de partidos
         </p>
-<!--         <router-link
-          id="link-partido"
-          class="btn btn-primary boton-listado"
-          to="/Listado"
-          >Listado de partidos</router-link
-        > -->
-<!--         <button @click="abrirListado" class="btn btn-primary boton-listado">
-          Listado de Partidos
-        </button> -->
       </div>
     </div>
   </div>
@@ -43,6 +36,11 @@ export default {
     abrirListado() {
       console.log("se gatilló");
       this.$router.push("/Listado");
+    },
+    cambiarTitulo(){
+      console.log(this.$store.getters.obtenerElemento1);
+      this.$store.dispatch('setTituloAction', 'Este ahora es un nuevo titulo');
+      
     }
   }
 };
