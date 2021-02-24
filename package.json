@@ -10,12 +10,14 @@
   "dependencies": {
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.6.5",
+    "firebase": "^8.2.7",
     "leaflet": "^1.7.1",
     "leaflet-defaulticon-compatibility": "^0.1.1",
     "sass": "^1.32.5",
     "sass-loader": "^10.1.1",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
+    "vuefire": "^2.2.5",
     "vuex": "^4.0.0"
   },
   "devDependencies": {

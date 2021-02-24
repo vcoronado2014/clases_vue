@@ -14,16 +14,24 @@
             <ul class="dropdown-menu dropdown-menu-end">
                 
                 <li><router-link class="dropdown-item" to="/">Home</router-link></li>
-                <li><router-link class="dropdown-item" to="/Listado">Listado</router-link></li>  
-
+                <li><router-link class="dropdown-item" to="/Listado">Listado</router-link></li>
+                <li><router-link class="dropdown-item" to="/Mensajes">Muro</router-link></li>  
+                <div v-if="$store.getters.isLoguedIn">
+                    <li><a class="dropdown-item" href="#" @click.prevent="logout">Logout</a></li>
+                </div>
+                <!-- si no esta logueado-->
+                <div v-else>
+                    <li><a class="dropdown-item" href="#" @click.prevent="login">Login</a></li>
+                </div>
             </ul> 
-               
         </nav>
         
 </div>
 </template>
 
 <script>
+import firebase from 'firebase';
+import '@/firebase/init';
 export default {
     name: 'MenuBar',
     props:{
@@ -32,6 +40,16 @@ export default {
     methods:{
         getTitle(){
             return this.$props.titulo  ? this.$props.titulo : "Bienvenidos"
+        },
+        login(){
+            this.$router.push('/Login');
+        },
+        logout(){
+            console.log('logout');
+            firebase.auth().signOut().then(()=>{
+                //aca ya estamos deslogueados
+                this.$store.dispatch('setUserAction', null);
+            })
         }
     }
 } 

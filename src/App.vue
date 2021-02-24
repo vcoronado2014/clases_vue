@@ -22,7 +22,7 @@
 
 <style lang="sass">
 @import "https://cdn.jsdelivr.net/npm/animate.css@3.5.1"
-
+@import "../src/assets/sass/variables.scss";
 .back-header
   background-color: red
 

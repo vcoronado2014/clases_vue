@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style scoped lang="sass">
-
+@import "../assets/sass/variables.scss"
 .titulo
     color: red
     background-color: blue

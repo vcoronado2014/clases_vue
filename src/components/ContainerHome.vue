@@ -3,6 +3,7 @@
   <div id="containerHome" class="container">
     <h1>{{$store.getters.obtenerElemento1}}</h1>
     <button @click.prevent="cambiarTitulo">Cambiar supertitulo</button>
+    <!-- {{$store.getters.isLoguedIn}} -->
     <!-- agregamos row y personalizamos card por una clase card-home agregamos mt-1 -->
     <div class="card-home row mt-1">
       <!-- agregamos col y un mt-2 a la imagen-->
@@ -30,6 +31,8 @@
 </template>
 
 <script>
+import firebase from 'firebase';
+
 export default {
   name: "ContainerHome",
   methods: {
@@ -41,6 +44,22 @@ export default {
       console.log(this.$store.getters.obtenerElemento1);
       this.$store.dispatch('setTituloAction', 'Este ahora es un nuevo titulo');
       
+    }
+  },
+  created(){
+    if (this.$store.getters.isLoguedIn){
+      let db = firebase.database();
+      let mensajesRef = db.ref('mensajes');
+      mensajesRef.on('value', datos =>{
+        const data = datos.val();
+        if (data){
+          console.log(data);
+          Object.keys(data).forEach(indice => {
+            console.log(indice);
+            console.log(data[indice]);
+          });
+        }
+      })
     }
   }
 };
